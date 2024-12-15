@@ -1,4 +1,4 @@
-def get_input_array(name):
+def input_array(name):
     while True:
         user_input = input(f"Введите элементы массива {name} через пробел: ")
         try:
@@ -46,10 +46,10 @@ def main():
         choice = input("Выберите действие (1-6): ")
 
         if choice == '1':
-            A = get_input_array("A")
+            A = input_array("A")
             print(f"Массив A: {A}")
         elif choice == '2':
-            B = get_input_array("B")
+            B = input_array("B")
             print(f"Массив B: {B}")
         elif choice == '3':
             try:
