@@ -19,15 +19,25 @@ def find_unique_in_A(A, B):
     result = list(duplicates_in_B.intersection(unique_in_A))
     return result
 
+def find_elements_only_in_A_or_B(A, B):
+    # Находим элементы, которые есть только в A или только в B
+    set_A = set(A)
+    set_B = set(B)
+    
+    # Элементы, которые есть только в A или только в B
+    unique_elements = (set_A - set_B).union(set_B - set_A)
+    return list(unique_elements)
+
 def main():
     while True:
         print("\nМеню:")
         print("1. Ввести массив A")
         print("2. Ввести массив B")
         print("3. Найти повторяющиеся элементы в B, которые есть в A только в одном экземпляре")
+        print("4. Найти элементы, которые есть только в A или только в B")
         print("4. Выход")
 
-        choice = input("Выберите действие (1-4): ")
+        choice = input("Выберите действие (1-5): ")
 
         if choice == '1':
             A = get_input_array("A")
@@ -42,6 +52,12 @@ def main():
             except NameError:
                 print("Ошибка: Сначала введите массивы A и B.")
         elif choice == '4':
+            try:
+                result = find_elements_only_in_A_or_B(A, B)
+                print(f"Элементы, которые есть только в A или только в B: {result}")
+            except NameError:
+                print("Ошибка: Сначала введите массивы A и B.")
+        elif choice == '5':
             print("Выход из программы.")
             break
         else:
