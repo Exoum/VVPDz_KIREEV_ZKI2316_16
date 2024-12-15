@@ -1,0 +1,43 @@
+# Операционные системы
+.DS_Store
+Thumbs.db
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.env
+.venv/
+env/
+venv/
+
+# Visual Studio Code
+.vscode/
+.history/
+
+# Mac
+*.DS_Store
+
+# Логи
+*.log
+
+# Системные файлы
+*.swp
+*.swo
+
+# Другие временные файлы
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# Файлы конфигурации IDE
+.idea/
+*.sublime-project
+*.sublime-workspace
