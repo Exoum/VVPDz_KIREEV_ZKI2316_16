@@ -28,6 +28,11 @@ def find_elements_only_in_A_or_B(A, B):
     unique_elements = (set_A - set_B).union(set_B - set_A)
     return list(unique_elements)
 
+def find_repeated_in_B(A, B):
+    # Находим элементы из A, которые повторяются в B
+    repeated_in_B = [x for x in set(A) if B.count(x) > 1]
+    return repeated_in_B
+
 def main():
     while True:
         print("\nМеню:")
@@ -35,9 +40,10 @@ def main():
         print("2. Ввести массив B")
         print("3. Найти повторяющиеся элементы в B, которые есть в A только в одном экземпляре")
         print("4. Найти элементы, которые есть только в A или только в B")
+        print("5. Найти элементы массива A, повторяющиеся в массиве B несколько раз")
         print("4. Выход")
 
-        choice = input("Выберите действие (1-5): ")
+        choice = input("Выберите действие (1-6): ")
 
         if choice == '1':
             A = get_input_array("A")
@@ -58,6 +64,12 @@ def main():
             except NameError:
                 print("Ошибка: Сначала введите массивы A и B.")
         elif choice == '5':
+            try:
+                result = find_repeated_in_B(A, B)
+                print(f"Элементы массива A, повторяющиеся в массиве B несколько раз: {result}")
+            except NameError:
+                print("Ошибка: Сначала введите массивы A и B.")
+        elif choice == '6':
             print("Выход из программы.")
             break
         else:
